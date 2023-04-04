@@ -18,6 +18,7 @@ from . import (
     sql,
     stage,
     streamlit,
+    registry,
     warehouse,
 )
 
@@ -148,6 +149,7 @@ app.add_typer(warehouse.app, name="warehouse")
 app.add_typer(stage.app, name="stage")
 app.add_typer(package.app, name="package")
 app.add_typer(render.app, name="render")
+app.add_typer(registry.app, name="registry")
 app.command("sql")(sql.execute_sql)
 
 

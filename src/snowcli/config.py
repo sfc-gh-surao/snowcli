@@ -41,7 +41,6 @@ def connectToSnowflake(connection: Optional[str] = None):  # type: ignore
     global snowflake_connection
     cfg = AppConfig()
     snowsql_config = SnowsqlConfig(path=cfg.config.get("snowsql_config_path"))
-
     # If there's no user-provided connection then read
     # the one specified by configuration file
     connection = connection or cfg.config.get("snowsql_connection_name")
@@ -50,7 +49,7 @@ def connectToSnowflake(connection: Optional[str] = None):  # type: ignore
         snowsql_config,
         connection,
     )
-
+    return
 
 def isAuth():
     cfg = AppConfig()
